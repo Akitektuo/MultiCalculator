@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Multi Calculator</string>
+    <string name="calculating">Calculating...</string>
+    <string name="more_options">More options soon.</string>
+    <string name="type_bellow">Type the number bellow</string>
+    <string name="result_bellow">Result will be shown bellow</string>
+    <string name="calculate">Calculate</string>
+    <string name="copy">Copy to clipboard</string>
+    <string name="base">Base</string>
+    <string name="divider">Divider</string>
+    <string name="x_2">x^2</string>
+    <string name="x_1">x^1</string>
+    <string name="x_0">x^0</string>
+    <string name="x_first">x1</string>
+    <string name="x_second">x2</string>
+    <string name="delta">Delta</string>
+    <string name="negative">Negative</string>
+</resources>

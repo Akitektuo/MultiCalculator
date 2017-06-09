@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space"
+    android:paddingRight="@dimen/space"
+    android:paddingTop="@dimen/space"
+    android:paddingBottom="@dimen/space"
+    tools:context="com.akitektuo.dividemynumber.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_divider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_above="@+id/layout_selector"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.1"
+            android:textSize="@dimen/text_title"
+            android:text="@string/type_bellow"
+            android:gravity="center"
+            android:textColor="@color/green"
+            android:background="@drawable/corners_gray"
+            android:layout_margin="@dimen/margin"/>
+
+        <EditText
+            android:id="@+id/edit_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:inputType="number"
+            android:background="@drawable/corners_green"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textSize="@dimen/text_size"
+            android:layout_margin="@dimen/margin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.1"
+            android:textSize="@dimen/text_title"
+            android:text="@string/result_bellow"
+            android:gravity="center"
+            android:textColor="@color/green"
+            android:background="@drawable/corners_gray"
+            android:layout_margin="@dimen/margin"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.2"
+            android:background="@drawable/corners_green"
+            android:padding="@dimen/margin"
+            android:layout_margin="@dimen/margin">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/text_divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/text_size"
+                    android:textIsSelectable="true"/>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin"
+            android:paddingBottom="@dimen/margin"
+            android:layout_weight="0.4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.5"
+                android:padding="@dimen/margin"
+                android:background="@color/gray"
+                android:gravity="center">
+
+            <Button
+                android:id="@+id/button_calculate_divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_title"
+                android:text="@string/calculate"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.5"
+                android:background="@color/gray"
+                android:padding="@dimen/margin"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_copy_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_title"
+                    android:background="@color/green"
+                    android:textAllCaps="false"
+                    android:text="@string/copy"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Start of delta-->
+
+    <LinearLayout
+        android:id="@+id/layout_delta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_above="@+id/layout_selector"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.3">
+
+            <LinearLayout
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:layout_margin="@dimen/margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.3"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/x_2"
+                    android:gravity="center"
+                    android:textColor="@color/green"
+                    android:background="@drawable/corners_gray"
+                    android:layout_marginBottom="@dimen/margin"/>
+
+                <EditText
+                    android:id="@+id/edit_delta_x_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/corners_green"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_delta_check_x_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.3"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/check_delta_x_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/green"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/negative"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_small"
+                        android:textColor="@color/green"
+                        android:layout_alignBaseline="@+id/check_delta_x_2"
+                        android:layout_alignBottom="@+id/check_delta_x_2"
+                        android:layout_toRightOf="@+id/check_delta_x_2"
+                        android:layout_toEndOf="@+id/check_delta_x_2" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:layout_margin="@dimen/margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.3"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/x_1"
+                    android:gravity="center"
+                    android:textColor="@color/green"
+                    android:background="@drawable/corners_gray"
+                    android:layout_marginBottom="@dimen/margin"/>
+
+                <EditText
+                    android:id="@+id/edit_delta_x_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/corners_green"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_delta_check_x_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.3"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/check_delta_x_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/green"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/negative"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_small"
+                        android:textColor="@color/green"
+                        android:layout_alignBaseline="@+id/check_delta_x_1"
+                        android:layout_alignBottom="@+id/check_delta_x_1"
+                        android:layout_toRightOf="@+id/check_delta_x_1"
+                        android:layout_toEndOf="@+id/check_delta_x_1" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:layout_margin="@dimen/margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.3"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/x_0"
+                    android:gravity="center"
+                    android:textColor="@color/green"
+                    android:background="@drawable/corners_gray"
+                    android:layout_marginBottom="@dimen/margin"/>
+
+                <EditText
+                    android:id="@+id/edit_delta_x_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/corners_green"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_delta_check_x_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.3"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/check_delta_x_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/green"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/negative"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_small"
+                        android:textColor="@color/green"
+                        android:layout_alignBaseline="@+id/check_delta_x_0"
+                        android:layout_alignBottom="@+id/check_delta_x_0"
+                        android:layout_toRightOf="@+id/check_delta_x_0"
+                        android:layout_toEndOf="@+id/check_delta_x_0"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:orientation="vertical"
+            android:layout_weight="0.25">
+
+            <TextView
+                android:id="@+id/text_delta_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.4"
+                android:textSize="@dimen/text_title"
+                android:text="@string/delta"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:background="@drawable/corners_gray"
+                android:layout_marginBottom="@dimen/margin"/>
+
+            <TextView
+                android:id="@+id/text_delta"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.6"
+                android:gravity="center"
+                android:background="@drawable/corners_green"
+                android:textSize="@dimen/text_size"
+                android:textIsSelectable="true"
+                android:layout_marginBottom="@dimen/margin"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:orientation="horizontal"
+            android:layout_weight="0.25">
+
+            <LinearLayout
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.4"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/x_first"
+                    android:gravity="center"
+                    android:textColor="@color/green"
+                    android:background="@drawable/corners_gray"
+                    android:layout_marginBottom="@dimen/margin"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/corners_green"
+                    android:padding="@dimen/margin">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:id="@+id/text_delta_x_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/text_size"
+                            android:textIsSelectable="true"/>
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.4"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/x_second"
+                    android:gravity="center"
+                    android:textColor="@color/green"
+                    android:background="@drawable/corners_gray"
+                    android:layout_marginBottom="@dimen/margin"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/weight"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/corners_green"
+                    android:padding="@dimen/margin">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:id="@+id/text_delta_x_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/text_size"
+                            android:textIsSelectable="true"/>
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin"
+            android:paddingBottom="@dimen/margin"
+            android:layout_weight="0.3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.5"
+                android:padding="@dimen/margin"
+                android:background="@color/gray"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_calculate_delta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/calculate"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.5"
+                android:background="@color/gray"
+                android:padding="@dimen/margin"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_copy_delta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_title"
+                    android:background="@color/green"
+                    android:textAllCaps="false"
+                    android:text="@string/copy"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_selector"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/green" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circled_up"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/text_calculator_name" />
+
+        <TextView
+            android:id="@+id/text_calculator_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/base"/>
+
+        <Button
+            android:id="@+id/button_options"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
