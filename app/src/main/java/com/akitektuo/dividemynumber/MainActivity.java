@@ -370,7 +370,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         sum = sum / grades.length;
         if (editSemesterGrade.getText().toString().isEmpty()) {
-            textAverage.setText(String.valueOf(sum));
+            textAverage.setText(String.valueOf(new DecimalFormat("#.####").format(sum)));
         } else {
             int semesterGrade = Integer.parseInt(editSemesterGrade.getText().toString());
             if (semesterGrade > 0 && semesterGrade < 11) {
