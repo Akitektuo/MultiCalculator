@@ -26,6 +26,7 @@ import static java.lang.String.valueOf;
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private TextView textCalculator;
+    private Preference preference;
 
     private LinearLayout layoutDivider;
     private EditText editDivider;
@@ -53,9 +54,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         textCalculator = (TextView) findViewById(R.id.text_calculator_name);
         findViewById(R.id.button_options).setOnClickListener(this);
+        preference = new Preference(this);
 
         layoutDivider = (LinearLayout) findViewById(R.id.layout_divider);
         editDivider = (EditText) findViewById(R.id.edit_divider);
@@ -143,6 +144,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         textAverage = (TextView) findViewById(R.id.text_average);
         findViewById(R.id.button_calculate_average).setOnClickListener(this);
         findViewById(R.id.button_clear_average).setOnClickListener(this);
+        getLayoutFromPreferences();
     }
 
     @Override
@@ -175,20 +177,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         switch (i) {
                             case 0:
                                 launchBaseCalculator();
+                                preference.setPreference(Preference.KEY_LAYOUT, 0);
                                 break;
                             case 1:
-                                textCalculator.setText(R.string.divider);
-                                changeLayout(layoutDivider);
+                                preference.setPreference(Preference.KEY_LAYOUT, 1);
                                 break;
                             case 2:
-                                textCalculator.setText(R.string.delta);
-                                changeLayout(layoutDelta);
+                                preference.setPreference(Preference.KEY_LAYOUT, 2);
                                 break;
                             case 3:
-                                textCalculator.setText(R.string.average);
-                                changeLayout(layoutAverage);
+                                preference.setPreference(Preference.KEY_LAYOUT, 3);
                                 break;
                         }
+                        getLayoutFromPreferences();
                     }
                 });
                 builder.setNeutralButton("Cancel", null);
@@ -321,11 +322,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
         startActivity(intentCalculator);
     }
 
-    private void changeLayout(LinearLayout layout) {
-        layoutDivider.setVisibility(GONE);
-        layoutDelta.setVisibility(GONE);
-        layoutAverage.setVisibility(GONE);
-        layout.setVisibility(View.VISIBLE);
+    private void getLayoutFromPreferences() {
+        switch (preference.getPreferenceInt(Preference.KEY_LAYOUT)) {
+            case 0:
+                textCalculator.setText(R.string.base);
+                layoutDivider.setVisibility(GONE);
+                layoutDelta.setVisibility(GONE);
+                layoutAverage.setVisibility(GONE);
+                break;
+            case 1:
+                textCalculator.setText(R.string.divider);
+                layoutDivider.setVisibility(View.VISIBLE);
+                layoutDelta.setVisibility(GONE);
+                layoutAverage.setVisibility(GONE);
+                break;
+            case 2:
+                textCalculator.setText(R.string.delta);
+                layoutDivider.setVisibility(GONE);
+                layoutDelta.setVisibility(View.VISIBLE);
+                layoutAverage.setVisibility(GONE);
+                break;
+            case 3:
+                textCalculator.setText(R.string.average);
+                layoutDivider.setVisibility(GONE);
+                layoutDelta.setVisibility(GONE);
+                layoutAverage.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 
     private void changeSign(int whichField) {
