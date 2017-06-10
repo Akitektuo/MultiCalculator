@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 import static android.view.View.GONE;
 import static java.lang.Double.parseDouble;
 import static java.lang.Math.sqrt;
@@ -361,22 +363,45 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void calculateAverage() {
-        rearrangeGrades();
-
+        String[] grades = rearrangeGrades().split(" ");
+        double sum = 0;
+        for (String x : grades) {
+            sum += Integer.parseInt(x);
+        }
+        sum = sum / grades.length;
+        if (editSemesterGrade.getText().toString().isEmpty()) {
+            textAverage.setText(String.valueOf(sum));
+        } else {
+            int semesterGrade = Integer.parseInt(editSemesterGrade.getText().toString());
+            if (semesterGrade > 0 && semesterGrade < 11) {
+                textAverage.setText(String.valueOf(new DecimalFormat("#.####").format((sum * 3 + semesterGrade) / 4)));
+            } else {
+                Toast.makeText(this, "Grades have to be less than 10", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private String rearrangeGrades() {
         String grades = editGrades.getText().toString();
+        if (grades.startsWith("0")) {
+            grades = grades.substring(1, grades.length());
+        }
         if (grades.isEmpty()) {
             Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show();
             return "";
         }
-        for (int i = 0; i < grades.length(); i++) {
-            if (!grades.substring(i, i + 1).equals("0")) {
-                grades = grades.substring(0, i) + " " + grades.substring(i, grades.length());
+        grades = grades.replaceAll(" ", "");
+        for (int i = 1; i < grades.length(); i++) {
+            if (!(grades.substring(i, i + 1).equals("0") && grades.substring(i - 1, i).equals("1"))) {
+                if (grades.substring(i, i + 1).equals("0")) {
+                    grades = grades.substring(0, i) + grades.substring(i + 1, grades.length());
+                    i--;
+                } else {
+                    grades = grades.substring(0, i) + " " + grades.substring(i, grades.length());
+                    i++;
+                }
             }
         }
-        grades = grades.substring(1, grades.length());
         editGrades.setText(grades);
         return grades;
     }
