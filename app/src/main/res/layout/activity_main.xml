@@ -38,6 +38,7 @@
             android:layout_weight="0.2"
             android:background="@drawable/corners_green"
             android:gravity="center"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:textSize="@dimen/text_size" />
 
@@ -168,6 +169,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/corners_green"
                     android:gravity="center"
+                    android:nextFocusDown="@+id/edit_delta_x_1"
                     android:inputType="numberDecimal"
                     android:textSize="@dimen/text_size" />
 
@@ -224,6 +226,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
                     android:layout_weight="0.4"
+                    android:nextFocusDown="@+id/edit_delta_x_0"
                     android:background="@drawable/corners_green"
                     android:gravity="center"
                     android:inputType="numberDecimal"
@@ -284,6 +287,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/corners_green"
                     android:gravity="center"
+                    android:imeOptions="actionDone"
                     android:inputType="numberDecimal"
                     android:textSize="@dimen/text_size" />
 
@@ -504,8 +508,8 @@
         android:id="@+id/layout_average"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/layout_selector"
         android:orientation="vertical"
+        android:layout_above="@+id/layout_selector"
         android:visibility="gone">
 
         <TextView
@@ -572,6 +576,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin"
                 android:layout_weight="0.1"
+                android:imeOptions="actionDone"
                 android:background="@drawable/corners_green"
                 android:gravity="center"
                 android:inputType="number"
