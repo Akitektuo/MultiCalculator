@@ -15,4 +15,8 @@
     <string name="x_second">x2</string>
     <string name="delta">Delta</string>
     <string name="negative">Negative</string>
+    <string name="type_grades">Type the grades bellow</string>
+    <string name="semester_grade">Semester grade</string>
+    <string name="average">Average</string>
+    <string name="clear">Clear</string>
 </resources>

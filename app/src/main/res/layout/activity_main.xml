@@ -5,74 +5,74 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/space"
     android:paddingLeft="@dimen/space"
     android:paddingRight="@dimen/space"
     android:paddingTop="@dimen/space"
-    android:paddingBottom="@dimen/space"
     tools:context="com.akitektuo.dividemynumber.MainActivity">
 
     <LinearLayout
         android:id="@+id/layout_divider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_above="@+id/layout_selector"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
+            android:layout_margin="@dimen/margin"
             android:layout_weight="0.1"
-            android:textSize="@dimen/text_title"
-            android:text="@string/type_bellow"
-            android:gravity="center"
-            android:textColor="@color/green"
             android:background="@drawable/corners_gray"
-            android:layout_margin="@dimen/margin"/>
+            android:gravity="center"
+            android:text="@string/type_bellow"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_title" />
 
         <EditText
             android:id="@+id/edit_divider"
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
-            android:inputType="number"
-            android:background="@drawable/corners_green"
+            android:layout_margin="@dimen/margin"
             android:layout_weight="0.2"
+            android:background="@drawable/corners_green"
             android:gravity="center"
-            android:textSize="@dimen/text_size"
-            android:layout_margin="@dimen/margin"/>
+            android:inputType="number"
+            android:textSize="@dimen/text_size" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
+            android:layout_margin="@dimen/margin"
             android:layout_weight="0.1"
-            android:textSize="@dimen/text_title"
-            android:text="@string/result_bellow"
-            android:gravity="center"
-            android:textColor="@color/green"
             android:background="@drawable/corners_gray"
-            android:layout_margin="@dimen/margin"/>
+            android:gravity="center"
+            android:text="@string/result_bellow"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_title" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
+            android:layout_margin="@dimen/margin"
             android:layout_weight="0.2"
             android:background="@drawable/corners_green"
-            android:padding="@dimen/margin"
-            android:layout_margin="@dimen/margin">
+            android:padding="@dimen/margin">
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
+                android:scrollbars="none">
 
                 <TextView
                     android:id="@+id/text_divider"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/text_size"
-                    android:textIsSelectable="true"/>
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/text_size" />
 
             </HorizontalScrollView>
 
@@ -81,27 +81,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
+            android:layout_weight="0.4"
             android:orientation="vertical"
-            android:paddingTop="@dimen/margin"
             android:paddingBottom="@dimen/margin"
-            android:layout_weight="0.4">
+            android:paddingTop="@dimen/margin">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/weight"
                 android:layout_weight="0.5"
-                android:padding="@dimen/margin"
                 android:background="@color/gray"
-                android:gravity="center">
+                android:gravity="center"
+                android:padding="@dimen/margin">
 
-            <Button
-                android:id="@+id/button_calculate_divider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
-                android:textAllCaps="false"
-                android:textSize="@dimen/text_title"
-                android:text="@string/calculate"/>
+                <Button
+                    android:id="@+id/button_calculate_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:text="@string/calculate"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_title" />
 
             </LinearLayout>
 
@@ -110,17 +110,17 @@
                 android:layout_height="@dimen/weight"
                 android:layout_weight="0.5"
                 android:background="@color/gray"
-                android:padding="@dimen/margin"
-                android:gravity="center">
+                android:gravity="center"
+                android:padding="@dimen/margin">
 
                 <Button
                     android:id="@+id/button_copy_divider"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_title"
                     android:background="@color/green"
+                    android:text="@string/copy"
                     android:textAllCaps="false"
-                    android:text="@string/copy"/>
+                    android:textSize="@dimen/text_title" />
 
             </LinearLayout>
 
@@ -134,9 +134,9 @@
         android:id="@+id/layout_delta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_above="@+id/layout_selector"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -146,56 +146,56 @@
             <LinearLayout
                 android:layout_width="@dimen/weight"
                 android:layout_height="match_parent"
-                android:layout_weight="0.33"
                 android:layout_margin="@dimen/margin"
+                android:layout_weight="0.33"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
+                    android:layout_marginBottom="@dimen/margin"
                     android:layout_weight="0.3"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/x_2"
-                    android:gravity="center"
-                    android:textColor="@color/green"
                     android:background="@drawable/corners_gray"
-                    android:layout_marginBottom="@dimen/margin"/>
+                    android:gravity="center"
+                    android:text="@string/x_2"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_title" />
 
                 <EditText
                     android:id="@+id/edit_delta_x_2"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:inputType="numberDecimal"
-                    android:background="@drawable/corners_green"
                     android:layout_weight="0.4"
+                    android:background="@drawable/corners_green"
                     android:gravity="center"
-                    android:textSize="@dimen/text_size"/>
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/text_size" />
 
                 <RelativeLayout
                     android:id="@+id/layout_delta_check_x_2"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:orientation="horizontal"
                     android:layout_weight="0.3"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <CheckBox
                         android:id="@+id/check_delta_x_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/green"/>
+                        android:buttonTint="@color/green" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/negative"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_small"
-                        android:textColor="@color/green"
                         android:layout_alignBaseline="@+id/check_delta_x_2"
                         android:layout_alignBottom="@+id/check_delta_x_2"
+                        android:layout_toEndOf="@+id/check_delta_x_2"
                         android:layout_toRightOf="@+id/check_delta_x_2"
-                        android:layout_toEndOf="@+id/check_delta_x_2" />
+                        android:gravity="center"
+                        android:text="@string/negative"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text_small" />
 
                 </RelativeLayout>
 
@@ -204,56 +204,56 @@
             <LinearLayout
                 android:layout_width="@dimen/weight"
                 android:layout_height="match_parent"
-                android:layout_weight="0.33"
                 android:layout_margin="@dimen/margin"
+                android:layout_weight="0.33"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
+                    android:layout_marginBottom="@dimen/margin"
                     android:layout_weight="0.3"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/x_1"
-                    android:gravity="center"
-                    android:textColor="@color/green"
                     android:background="@drawable/corners_gray"
-                    android:layout_marginBottom="@dimen/margin"/>
+                    android:gravity="center"
+                    android:text="@string/x_1"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_title" />
 
                 <EditText
                     android:id="@+id/edit_delta_x_1"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:inputType="numberDecimal"
-                    android:background="@drawable/corners_green"
                     android:layout_weight="0.4"
+                    android:background="@drawable/corners_green"
                     android:gravity="center"
-                    android:textSize="@dimen/text_size"/>
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/text_size" />
 
                 <RelativeLayout
                     android:id="@+id/layout_delta_check_x_1"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:orientation="horizontal"
                     android:layout_weight="0.3"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <CheckBox
                         android:id="@+id/check_delta_x_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/green"/>
+                        android:buttonTint="@color/green" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/negative"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_small"
-                        android:textColor="@color/green"
                         android:layout_alignBaseline="@+id/check_delta_x_1"
                         android:layout_alignBottom="@+id/check_delta_x_1"
+                        android:layout_toEndOf="@+id/check_delta_x_1"
                         android:layout_toRightOf="@+id/check_delta_x_1"
-                        android:layout_toEndOf="@+id/check_delta_x_1" />
+                        android:gravity="center"
+                        android:text="@string/negative"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text_small" />
 
                 </RelativeLayout>
 
@@ -262,56 +262,56 @@
             <LinearLayout
                 android:layout_width="@dimen/weight"
                 android:layout_height="match_parent"
-                android:layout_weight="0.33"
                 android:layout_margin="@dimen/margin"
+                android:layout_weight="0.33"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
+                    android:layout_marginBottom="@dimen/margin"
                     android:layout_weight="0.3"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/x_0"
-                    android:gravity="center"
-                    android:textColor="@color/green"
                     android:background="@drawable/corners_gray"
-                    android:layout_marginBottom="@dimen/margin"/>
+                    android:gravity="center"
+                    android:text="@string/x_0"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_title" />
 
                 <EditText
                     android:id="@+id/edit_delta_x_0"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:inputType="numberDecimal"
-                    android:background="@drawable/corners_green"
                     android:layout_weight="0.4"
+                    android:background="@drawable/corners_green"
                     android:gravity="center"
-                    android:textSize="@dimen/text_size"/>
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/text_size" />
 
                 <RelativeLayout
                     android:id="@+id/layout_delta_check_x_0"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
-                    android:orientation="horizontal"
                     android:layout_weight="0.3"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <CheckBox
                         android:id="@+id/check_delta_x_0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/green"/>
+                        android:buttonTint="@color/green" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/negative"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_small"
-                        android:textColor="@color/green"
                         android:layout_alignBaseline="@+id/check_delta_x_0"
                         android:layout_alignBottom="@+id/check_delta_x_0"
+                        android:layout_toEndOf="@+id/check_delta_x_0"
                         android:layout_toRightOf="@+id/check_delta_x_0"
-                        android:layout_toEndOf="@+id/check_delta_x_0"/>
+                        android:gravity="center"
+                        android:text="@string/negative"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text_small" />
 
                 </RelativeLayout>
 
@@ -322,39 +322,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
-            android:orientation="vertical"
-            android:layout_weight="0.25">
+            android:layout_weight="0.25"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_delta_title"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/weight"
+                android:layout_marginBottom="@dimen/margin"
                 android:layout_weight="0.4"
-                android:textSize="@dimen/text_title"
-                android:text="@string/delta"
-                android:gravity="center"
-                android:textColor="@color/green"
                 android:background="@drawable/corners_gray"
-                android:layout_marginBottom="@dimen/margin"/>
+                android:gravity="center"
+                android:text="@string/delta"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_title" />
 
             <TextView
                 android:id="@+id/text_delta"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/weight"
+                android:layout_marginBottom="@dimen/margin"
                 android:layout_weight="0.6"
-                android:gravity="center"
                 android:background="@drawable/corners_green"
-                android:textSize="@dimen/text_size"
+                android:gravity="center"
                 android:textIsSelectable="true"
-                android:layout_marginBottom="@dimen/margin"/>
+                android:textSize="@dimen/text_size" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
-            android:orientation="horizontal"
-            android:layout_weight="0.25">
+            android:layout_weight="0.25"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="@dimen/weight"
@@ -366,13 +366,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
+                    android:layout_marginBottom="@dimen/margin"
                     android:layout_weight="0.4"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/x_first"
-                    android:gravity="center"
-                    android:textColor="@color/green"
                     android:background="@drawable/corners_gray"
-                    android:layout_marginBottom="@dimen/margin"/>
+                    android:gravity="center"
+                    android:text="@string/x_first"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_title" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -384,16 +384,16 @@
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scrollbars="none"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:scrollbars="none">
 
                         <TextView
                             android:id="@+id/text_delta_x_1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textSize="@dimen/text_size"
-                            android:textIsSelectable="true"/>
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/text_size" />
 
                     </HorizontalScrollView>
 
@@ -411,13 +411,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/weight"
+                    android:layout_marginBottom="@dimen/margin"
                     android:layout_weight="0.4"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/x_second"
-                    android:gravity="center"
-                    android:textColor="@color/green"
                     android:background="@drawable/corners_gray"
-                    android:layout_marginBottom="@dimen/margin"/>
+                    android:gravity="center"
+                    android:text="@string/x_second"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_title" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -429,16 +429,16 @@
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scrollbars="none"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:scrollbars="none">
 
                         <TextView
                             android:id="@+id/text_delta_x_2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textSize="@dimen/text_size"
-                            android:textIsSelectable="true"/>
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/text_size" />
 
                     </HorizontalScrollView>
 
@@ -451,27 +451,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
+            android:layout_weight="0.3"
             android:orientation="vertical"
-            android:paddingTop="@dimen/margin"
             android:paddingBottom="@dimen/margin"
-            android:layout_weight="0.3">
+            android:paddingTop="@dimen/margin">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/weight"
                 android:layout_weight="0.5"
-                android:padding="@dimen/margin"
                 android:background="@color/gray"
-                android:gravity="center">
+                android:gravity="center"
+                android:padding="@dimen/margin">
 
                 <Button
                     android:id="@+id/button_calculate_delta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/green"
+                    android:text="@string/calculate"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/text_title"
-                    android:text="@string/calculate"/>
+                    android:textSize="@dimen/text_title" />
 
             </LinearLayout>
 
@@ -480,19 +480,150 @@
                 android:layout_height="@dimen/weight"
                 android:layout_weight="0.5"
                 android:background="@color/gray"
-                android:padding="@dimen/margin"
-                android:gravity="center">
+                android:gravity="center"
+                android:padding="@dimen/margin">
 
                 <Button
                     android:id="@+id/button_copy_delta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_title"
                     android:background="@color/green"
+                    android:text="@string/copy"
                     android:textAllCaps="false"
-                    android:text="@string/copy"/>
+                    android:textSize="@dimen/text_title" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Start of Average-->
+
+    <LinearLayout
+        android:id="@+id/layout_average"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_selector"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_margin="@dimen/margin"
+            android:layout_weight="0.1"
+            android:background="@drawable/corners_gray"
+            android:gravity="center"
+            android:text="@string/type_grades"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_title" />
+
+        <EditText
+            android:id="@+id/edit_grades"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_margin="@dimen/margin"
+            android:layout_weight="0.2"
+            android:background="@drawable/corners_green"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="@dimen/text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.1"
+                android:background="@drawable/corners_gray"
+                android:gravity="center"
+                android:text="@string/semester_grade"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_title" />
+
+            <TextView
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.1"
+                android:background="@drawable/corners_gray"
+                android:gravity="center"
+                android:text="@string/average"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_title" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_semester_grade"
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.1"
+                android:background="@drawable/corners_green"
+                android:gravity="center"
+                android:inputType="number"
+                android:textSize="@dimen/text_title" />
+
+            <TextView
+                android:id="@+id/text_average"
+                android:layout_width="@dimen/weight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                android:layout_weight="0.1"
+                android:background="@drawable/corners_green"
+                android:gravity="center"
+                android:textSize="@dimen/text_title" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.2"
+            android:background="@color/gray"
+            android:gravity="center"
+            android:padding="@dimen/margin">
+
+            <Button
+                android:id="@+id/button_calculate_average"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="@string/calculate"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_title" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight"
+            android:layout_weight="0.2"
+            android:background="@color/gray"
+            android:gravity="center"
+            android:padding="@dimen/margin">
+
+            <Button
+                android:id="@+id/button_clear_average"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="@string/clear"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_title" />
 
         </LinearLayout>
 
@@ -501,8 +632,8 @@
     <RelativeLayout
         android:id="@+id/layout_selector"
         android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_height="30dp">
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:layout_width="match_parent"
@@ -512,9 +643,9 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/circled_up"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/text_calculator_name" />
+            android:layout_toLeftOf="@+id/text_calculator_name"
+            android:background="@drawable/circled_up" />
 
         <TextView
             android:id="@+id/text_calculator_name"
@@ -522,8 +653,8 @@
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:textStyle="bold"
-            android:text="@string/base"/>
+            android:text="@string/base"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_options"

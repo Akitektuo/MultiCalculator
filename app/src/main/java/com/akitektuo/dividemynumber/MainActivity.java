@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.view.View.GONE;
 import static java.lang.Double.parseDouble;
 import static java.lang.Math.sqrt;
 import static java.lang.String.valueOf;
@@ -39,6 +40,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private CheckBox checkX0;
     private TextView textDeltaTitle;
     private TextView textDelta;
+
+    private LinearLayout layoutAverage;
+    private EditText editGrades;
+    private EditText editSemesterGrade;
+    private TextView textAverage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +134,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
         textDeltaTitle = (TextView) findViewById(R.id.text_delta_title);
         textDelta = (TextView) findViewById(R.id.text_delta);
+
+        layoutAverage = (LinearLayout) findViewById(R.id.layout_average);
+        editGrades = (EditText) findViewById(R.id.edit_grades);
+        editSemesterGrade = (EditText) findViewById(R.id.edit_semester_grade);
+        textAverage = (TextView) findViewById(R.id.text_average);
+        findViewById(R.id.button_calculate_average).setOnClickListener(this);
+        findViewById(R.id.button_clear_average).setOnClickListener(this);
     }
 
     @Override
@@ -169,6 +182,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 textCalculator.setText(R.string.delta);
                                 changeLayout(layoutDelta);
                                 break;
+                            case 3:
+                                textCalculator.setText(R.string.average);
+                                changeLayout(layoutAverage);
+                                break;
                         }
                     }
                 });
@@ -196,6 +213,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.layout_delta_check_x_0:
                 checkX0.setChecked(!checkX0.isChecked());
                 changeSign(0);
+                break;
+            case R.id.button_calculate_average:
+                calculateAverage();
+                break;
+            case R.id.button_clear_average:
+                editGrades.setText("");
+                editSemesterGrade.setText("");
+                textAverage.setText("");
                 break;
         }
     }
@@ -295,8 +320,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void changeLayout(LinearLayout layout) {
-        layoutDivider.setVisibility(View.GONE);
-        layoutDelta.setVisibility(View.GONE);
+        layoutDivider.setVisibility(GONE);
+        layoutDelta.setVisibility(GONE);
+        layoutAverage.setVisibility(GONE);
         layout.setVisibility(View.VISIBLE);
     }
 
@@ -332,5 +358,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private boolean checkEmptyDeltaField(EditText constantField) {
         String text = constantField.getText().toString();
         return text.isEmpty() || text.equals("-");
+    }
+
+    private void calculateAverage() {
+        rearrangeGrades();
+
+    }
+
+    private String rearrangeGrades() {
+        String grades = editGrades.getText().toString();
+        if (grades.isEmpty()) {
+            Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show();
+            return "";
+        }
+        for (int i = 0; i < grades.length(); i++) {
+            if (!grades.substring(i, i + 1).equals("0")) {
+                grades = grades.substring(0, i) + " " + grades.substring(i, grades.length());
+            }
+        }
+        grades = grades.substring(1, grades.length());
+        editGrades.setText(grades);
+        return grades;
     }
 }
