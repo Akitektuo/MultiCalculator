@@ -592,38 +592,48 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/weight"
-            android:layout_weight="0.2"
-            android:background="@color/gray"
-            android:gravity="center"
-            android:padding="@dimen/margin">
+            android:layout_weight="0.3"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin"
+            android:paddingTop="@dimen/margin">
 
-            <Button
-                android:id="@+id/button_calculate_average"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
-                android:text="@string/calculate"
-                android:textAllCaps="false"
-                android:textSize="@dimen/text_title" />
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.2"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:padding="@dimen/margin">
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/button_calculate_average"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:text="@string/calculate"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_title" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/weight"
-            android:layout_weight="0.2"
-            android:background="@color/gray"
-            android:gravity="center"
-            android:padding="@dimen/margin">
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button_clear_average"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
-                android:text="@string/clear"
-                android:textAllCaps="false"
-                android:textSize="@dimen/text_title" />
+                android:layout_height="@dimen/weight"
+                android:layout_weight="0.2"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:padding="@dimen/margin">
+
+                <Button
+                    android:id="@+id/button_clear_average"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:text="@string/clear"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_title" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
