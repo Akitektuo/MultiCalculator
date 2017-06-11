@@ -319,7 +319,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         intentCalculator.setAction(Intent.ACTION_MAIN);
         intentCalculator.addCategory(Intent.CATEGORY_APP_CALCULATOR);
         intentCalculator.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intentCalculator);
+        try {
+            startActivity(intentCalculator);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Toast.makeText(this, "This function is not compatible with your device.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void getLayoutFromPreferences() {
