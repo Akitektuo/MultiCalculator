@@ -411,9 +411,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private String rearrangeGrades() {
         String grades = editGrades.getText().toString();
-        if (grades.startsWith("0")) {
-            grades = grades.substring(1, grades.length());
-        }
         if (grades.isEmpty()) {
             Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show();
             return "";
@@ -429,6 +426,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     i++;
                 }
             }
+        }
+        if (grades.startsWith("0")) {
+            grades = grades.substring(2, grades.length());
         }
         editGrades.setText(grades);
         return grades;
