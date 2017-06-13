@@ -391,20 +391,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void calculateAverage() {
-        String[] grades = rearrangeGrades().split(" ");
-        double sum = 0;
-        for (String x : grades) {
-            sum += Integer.parseInt(x);
-        }
-        sum = sum / grades.length;
-        if (editSemesterGrade.getText().toString().isEmpty()) {
-            textAverage.setText(String.valueOf(new DecimalFormat("#.####").format(sum)));
+        if (editGrades.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
         } else {
-            int semesterGrade = Integer.parseInt(editSemesterGrade.getText().toString());
-            if (semesterGrade > 0 && semesterGrade < 11) {
-                textAverage.setText(String.valueOf(new DecimalFormat("#.####").format((sum * 3 + semesterGrade) / 4)));
+            String[] grades = rearrangeGrades().split(" ");
+            double sum = 0;
+            for (String x : grades) {
+                sum += Integer.parseInt(x);
+            }
+            sum = sum / grades.length;
+            if (editSemesterGrade.getText().toString().isEmpty()) {
+                textAverage.setText(String.valueOf(new DecimalFormat("#.####").format(sum)));
             } else {
-                Toast.makeText(this, "Grades have to be less than 10", Toast.LENGTH_SHORT).show();
+                int semesterGrade = Integer.parseInt(editSemesterGrade.getText().toString());
+                if (semesterGrade > 0 && semesterGrade < 11) {
+                    textAverage.setText(String.valueOf(new DecimalFormat("#.####").format((sum * 3 + semesterGrade) / 4)));
+                } else {
+                    Toast.makeText(this, "Grades have to be less than 10", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
